@@ -1,0 +1,356 @@
+* {
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: initial;
+}
+
+/* common classes */
+.mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header {
+    background: rgb(194, 219, 170);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 600;
+    color: rgb(64, 119, 13);
+    margin-right: 32px;
+    text-transform: uppercase;
+}
+
+#searchField {
+    width: 400px;
+    padding: 14px;
+    border-radius: 4px;
+    background: rgba(236, 236, 236, 0.8);
+}
+
+::placeholder {
+    color: rgb(176, 210, 144);
+    font-weight: 600;
+}
+
+#searchButton {
+    background: rgb(64, 119, 13);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 4px;
+    margin-left: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#searchButton:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+#searchListDropDown {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    background: white;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: none;
+}
+
+.cartIconWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(64, 119, 13);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.cartIconWrapper > img {
+    display: block;
+    width: 26px;
+    height: 26px;
+}
+
+#cartCount {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: rgb(0, 128, 255);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.searchItem {
+    margin-top: 4px;
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+.searchItem:hover {
+    background-color: rgb(217, 217, 217);
+    color: ghostwhite;
+    transform: scale(1.02);
+}
+.searchItemImgWrapper {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.searchItemImgWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main {
+    background: rgb(221, 238, 212);
+    padding: 12px;
+    min-height: 100vh;
+}
+
+#productsWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.productCard {
+    width: 300px;
+    background: white;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+.productCard:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.productCard img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.productCard h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.productCard p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 12px 0;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.productActions {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.productActions button {
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.productActions button:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.addToCartBtn {
+    background: rgb(13, 96, 151);
+}
+
+.removeFromCartBtn {
+    background: rgb(156, 0, 0);
+}
+
+.buyNowBtn {
+    background: rgb(64, 119, 13);
+    margin-left: 12px;
+}
+
+/* product page */
+
+.productWrapper {
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.carouselWrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.4s;
+}
+
+.carousel img {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carouselWrapper .carouselButtons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carouselWrapper .carouselButtons button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.carouselWrapper .carouselButtons button:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+.carouselWrapper .carouselButtons .prev {
+    left: 0;
+}
+
+.carouselWrapper .carouselButtons .next {
+    right: 0;
+}
+
+.singleProductDetails {
+    margin-top: 12px;
+}
+
+.singleProductDetails h3 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.singleProductDetails .price {
+    font-size: 32px;
+    font-weight: 600;
+    color: rgb(64, 119, 13);
+}
+
+/* cart page */
+#cartpageheading {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 12px 0;
+    font-family: sans-serif;
+}
+#cartItemsWrapper {
+    width: max-content;
+    margin: 12px auto;
+}
+
+.cartItem {
+    background: white;
+    padding: 14px;
+    border-radius: 8px;
+    margin-top: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.cartItemImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cartItemImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.cartItemDetails {
+    margin-left: 12px;
+}
+
+.cartItemDetails p {
+    margin-top: 6px;
+}
+
+.removeFromCart2 {
+    margin-left: auto;
+    background: rgb(156, 0, 0);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 6px;
+}
