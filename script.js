@@ -234,6 +234,10 @@ const removeFromCartPage = (productId) => {
     const cartItem = document.getElementById(`cartItem_${productId}`);
     cartItem.remove();
     console.log("removed from cart:", productId);
+    const cartCount = document.getElementById("cartTotal");
+    cartCount.innerHTML = `<div> Total Products: ${
+        cart.length - 1
+    } items</div>`;
 };
 
 const embedCartProducts = async () => {
@@ -272,6 +276,14 @@ const embedCartProducts = async () => {
                 `;
             })
             .join("");
+
+        const cartCount = document.getElementById("cartTotal");
+        cartCount.innerHTML = `<div> Total Products: ${
+            products.length
+        } items</div>
+        <div> Amount To Pay: $ ${products.reduce((acc, product) => {
+            return acc + product.price;
+        }, 0)}</div>`;
     } catch (error) {
         console.log("[embedCartProducts] error", error);
     }

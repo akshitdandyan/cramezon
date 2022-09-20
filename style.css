@@ -354,3 +354,10 @@ main {
     transition: 0.2s;
     margin-top: 6px;
 }
+
+#cartTotal {
+    width: 342px;
+    margin: 12px auto;
+    font-size: 24px;
+    font-weight: 600;
+}
