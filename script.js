@@ -69,6 +69,12 @@ const embedProducts = async () => {
 const searchProducts = (e) => {
     const { value } = e.target;
     console.log(value);
+    if (!value) {
+        const searchListDropDown =
+            document.getElementById("searchListDropDown");
+        searchListDropDown.style.display = "none";
+        return;
+    }
     const filteredProducts = allProducts.filter((product) => {
         return product.title.toLowerCase().includes(value.toLowerCase());
     });
